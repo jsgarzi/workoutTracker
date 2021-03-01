@@ -23,13 +23,11 @@ router.put("/api/workouts/:id", (req, res) => {
         .then(data => { 
             let totalDuration = 0;
             let arr = JSON.parse(JSON.stringify(data)).exercises
-            console.log(arr)
+            
             for(let i = 0; i < arr.length; i++) {
                 totalDuration += arr[i].duration;
             }
             
-            console.log(totalDuration)
-
             db.Workout.findOneAndUpdate({_id: req.params.id},{totalDuration: totalDuration}).then(info => { res.json(info) })
             .catch(error => {
                 res.json(error);
