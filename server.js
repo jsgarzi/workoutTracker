@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://julian:4tJnoKa3IUuga3n5@jsgarzi1.vi02i.mongodb.net/workoutTrack?retryWrites=true&w=majority";
+const uri = "mongodb+srv://julian:<4tJnoKa3IUuga3n5>@jsgarzi1.vi02i.mongodb.net/workoutTrack?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
